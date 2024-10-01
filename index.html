@@ -12,9 +12,51 @@
         <h1>HTML Responsive Images</h1>
     </header>
     <main>
-        <section>
-            <img src="images/puppy-full.jpg" alt="A white puppy standing in short grass">
-        </section>
+      <section class="back-sizer">
+        <!-- we're using this section to play with background images-->
+      </section>
+      <section>
+        <!-- Src set supplies a set of images for the browser to choose you set the conditions for the browser 
+        "," let the browser to choose from the list-->
+          <img 
+          srcset="
+            images/puppy-2.0.jpg 2X,
+            images/puppy-3.0.jpg 3X"
+          src="images/puppy-1.0.jpg" alt="A white puppy standing in short grass">
+      </section>
+
+      <section class="test2">
+        <!-- the "X" above stands for pixel desnity
+          the "W" below stands for width (and will respond to both the image size and th epixel density)
+          the width you enter must correspond to the image's sctual width (in pixels)-->
+        <img 
+        srcset="
+          images/puppy-1.0.jpg 1000w,
+          images/puppy-2.0.jpg 2000w,
+          images/puppy-3.0.jpg 3000w" 
+
+          sizes="
+            (min-width:900px) 66.6vw,
+            (min-width:1200px) 33.3vw"
+
+          src="images/puppy-1.0.jpg" alt="A white puppy standing in short grass">>
+      </section>
+      <section>
+        <!-- the srcset attribute is great for showing the same image at different sizes
+          the picture tag is for showing a different image at different sizes-->
+          <picture>
+          <source srcset="images/puppy-1200.jpg"
+                  media="(min-width:1240px)">
+
+          <source srcset="images/puppy-900.jpg"
+                  media="(min-width:940px)">
+                  
+          <source srcset="images/puppy-600.jpg"
+                  media="(max-width:939px)"> <!-- or min-width:0px -->
+
+          <img src="images/puppy-1.0.jpg" alt="A white puppy standing in short grass">>
+          </picture>
+      </section>
     </main>
     <footer>
         <p>Image by <a href="https://pixabay.com/users/cparks-1593059/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5124947">Cindy Parks</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5124947">Pixabay</a></p>

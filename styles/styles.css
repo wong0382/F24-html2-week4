@@ -1,0 +1,34 @@
+/* playing with background size and background position */
+.back-sizer{
+    height: 600px;
+    border: 2px solid black;
+    background-repeat: no-repeat;
+/* the "../" is telling the browser to go out of the style folder,
+before going into theimages folder to find the image */
+    background-image: url(../images/puppy-full.jpg);
+
+    /* use background size to control the scale of your background image*/
+    /* background-size: contain; contain mack the whole iage visible inside the element*/
+    background-size: cover; /* cover tries to make sure the whole element is covered by the image (no white space)*/
+    
+    /* use background position to say what part of the image (or where) is displayed */
+    /* one value is both horizontal and vertical (ie, background-position:center)
+    two values is horizontal then vertical */
+    background-position: 70% center;
+}
+
+.test2 img{
+    width: 100%;
+}
+
+@media screen and (min-width:900px) {
+    .test2 img{
+        width: 66.6vw;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .test2 img{
+        width: 33.3vw;
+    }
+}
